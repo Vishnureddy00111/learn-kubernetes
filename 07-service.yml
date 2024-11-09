@@ -59,4 +59,16 @@ spec:
       - protocol: TCP
         port: 80
         targetPort: 80
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: my-google.com
+spec:
+  type: ExternalName
+  externalName: www.google.com
+
+
+
+
 
