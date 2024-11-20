@@ -3,7 +3,8 @@ kind: ClusterConfig
 
 metadata:
   name: practice
-  region: eu-north-1
+  region: us-east-1
 managedNodeGroups:
     - name: ng-1
+      desiredCapacity: 1
       spot: true
