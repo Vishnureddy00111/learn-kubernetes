@@ -17,3 +17,15 @@ spec:
     env:
       - name: URL
         value: yahoo.com
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: debug-cm-01
+spec:
+  containers:
+    -name: debug
+    image: rkalluru/debug
+envFrom:
+  - configMapRef:
+      name: cm-09
