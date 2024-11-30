@@ -6,7 +6,7 @@ metadata:
     app: guestbook
     tier: frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       tier: frontend
@@ -17,16 +17,15 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx
-
-
-
+          image: nginx:1.26
 ---
-kind: pod
+kind: Pod
 apiVersion: v1
 metadata:
   name: demo
-  spec:
-    containers:
-      - name: nginx
-        image: nginx
+  labels:
+    tier: frontend
+spec:
+  containers:
+    - name: nginx
+      image: nginx
