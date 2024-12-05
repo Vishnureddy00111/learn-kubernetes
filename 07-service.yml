@@ -35,7 +35,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-nginx-1
+  name: service-nginx-np
 spec:
   type: NodePort
   selector:
@@ -48,7 +48,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-nginx-1
+  name: service-nginx-lb
 spec:
   type: LoadBalancer
   selector:
@@ -57,3 +57,11 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-google
+spec:
+  type: ExternalName
+  externalName: www.google.com
