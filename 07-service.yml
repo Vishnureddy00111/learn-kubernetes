@@ -37,3 +37,41 @@ spec:
       image: rkalluru/debug
 
 ---
+# NodePort service for nginx Pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: service.nginx-np
+spec:
+  type: NodePort
+  selector:
+    appName: service-nginx-1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# LoadBalancer service for nginx Pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: service.nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    appName: service-nginx-1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# ExternalName service pointing to www.google.com
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-google.com
+spec:
+  type: ExternalName
+  externalName: www.google.com
