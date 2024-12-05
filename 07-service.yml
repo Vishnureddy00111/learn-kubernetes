@@ -1,21 +1,18 @@
-# Pod for nginx application
-apiVersion: v1
 kind: Pod
+apiVersion: v1
 metadata:
-  name: service.nginx-1
+  name: service-nginx-1
   labels:
     appName: service-nginx-1
 spec:
   containers:
     - name: nginx
       image: nginx
-
 ---
-# ClusterIP service for nginx Pod
 apiVersion: v1
 kind: Service
 metadata:
-  name: service.nginx-1
+  name: service-nginx-1
 spec:
   type: ClusterIP
   selector:
@@ -24,11 +21,9 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-
 ---
-# Debug Pod
-apiVersion: v1
 kind: Pod
+apiVersion: v1
 metadata:
   name: debug
 spec:
@@ -37,11 +32,10 @@ spec:
       image: rkalluru/debug
 
 ---
-# NodePort service for nginx Pod
 apiVersion: v1
 kind: Service
 metadata:
-  name: service.nginx-np
+  name: service-nginx-np
 spec:
   type: NodePort
   selector:
@@ -50,13 +44,11 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-
 ---
-# LoadBalancer service for nginx Pod
 apiVersion: v1
 kind: Service
 metadata:
-  name: service.nginx-lb
+  name: service-nginx-lb
 spec:
   type: LoadBalancer
   selector:
@@ -65,13 +57,11 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-
 ---
-# ExternalName service pointing to www.google.com
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-google.com
+  name: my-google
 spec:
   type: ExternalName
   externalName: www.google.com
