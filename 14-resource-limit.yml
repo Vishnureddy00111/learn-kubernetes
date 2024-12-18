@@ -15,7 +15,7 @@ spec:
           memory: "128Mi"
           cpu: "500m"
     - name: log-aggregator
-      image: nginx1
+      image: nginx
       resources:
         requests:
           memory: "64Mi"
