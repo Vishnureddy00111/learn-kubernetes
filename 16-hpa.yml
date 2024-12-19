@@ -17,4 +17,5 @@ spec:
       containers:
         - name: hpa
           image: rkalluru/hpa
+          imagePullPolicy: Always
 
