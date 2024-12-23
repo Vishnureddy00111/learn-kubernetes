@@ -20,6 +20,6 @@ spec:
                 operator: In
                 values:
                   - us-east-Id
-  containers:
+    containers:
     - name: with-node-affinity
       image: registry.k8s.io/pause:3.8
