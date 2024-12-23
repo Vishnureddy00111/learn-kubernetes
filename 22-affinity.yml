@@ -12,7 +12,6 @@ spec:
                 operator: In
                 values:
                   - hdd
-                  - ssd
       preferredDuringSchedulingIgnoredDuringExecution:
         - weight: 1
           preference:
