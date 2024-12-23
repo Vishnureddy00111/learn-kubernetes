@@ -22,7 +22,7 @@ spec:
       imagePullPolicy: IfNotPresent
       resources:
         requests:
-          cpu: 1800m
+          cpu: 200m
   priorityClassName: high-priority
 ---
 apiVersion: apps/v1
@@ -48,5 +48,5 @@ spec:
             - containerPort: 80
               resources:
                 requests:
-                  cpu: 200m
+                  cpu: 1800m
 
