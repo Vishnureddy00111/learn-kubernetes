@@ -1,2 +1,3 @@
 FROM                docker.io/redhat/ubi8
-ENTRYPOINT          [ "ping", "google.com" ]
+RUN                 dnf install -y
+ENTRYPOINT          ["nginx", "-g", "daemon off;"]
